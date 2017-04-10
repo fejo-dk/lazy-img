@@ -1,0 +1,7 @@
+lazy-img.is-enhanced a {
+  visibility: hidden;
+}
+
+img.lazy[aria-busy=true] { // post-replacement, but image retrieval still pending
+  @extend %loading-indicator-default;
+}

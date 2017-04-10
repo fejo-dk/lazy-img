@@ -1,0 +1,18 @@
+:ruby
+  _house = ViewModel::SampleData::House.new
+  images = _house.images
+
+  top_images = images[0..1]
+  bottom_images = images[2..3]
+
+= component :spacer, data: { height: 100 }
+
+- top_images.each do |image|
+  = component :lazy_image, data: { image: image }
+
+= component :spacer, data: { height: 100 }
+
+- bottom_images.each do |image|
+  -# additional block element for vertical separation
+  %p
+    = component :lazy_image, data: { image: image }

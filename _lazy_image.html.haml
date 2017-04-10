@@ -1,0 +1,9 @@
+:ruby
+  image = data.fetch(:image)
+  delay = data.fetch(:delay, nil)
+  tolerance = data.fetch(:tolerance, nil)
+  extras = data.fetch(:extras, {}) # typically data attributes
+
+%lazy-img{ extras, delay: delay, tolerance: tolerance }
+  = link_to image.src do
+    = image.caption
